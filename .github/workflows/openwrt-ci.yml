@@ -10,13 +10,13 @@
 name: 云编译优酷L1固件
 
 on:
-  # push:
-    # branches: 
-      # - master
-  # schedule:
-  #   - cron: 0 20 * * *
-  # release:
-  #   types: [published]
+  push:
+    branches: 
+      - master
+  schedule:
+    - cron: 0 20 * * *
+  release:
+    types: [published]
 
 jobs:
   build:
@@ -64,6 +64,7 @@ jobs:
           git clone https://github.com/openwrt-develop/luci-theme-atmaterial.git
           git clone https://github.com/Ameykyl/luci-app-koolproxyR
           git clone https://github.com/rosywrt/luci-theme-rosy
+          https://github.com/Zhuguangfei05/luci-app-vssr.git
 
       - name: 同步最新的源码
         run: |
@@ -180,7 +181,7 @@ jobs:
           CONFIG_PACKAGE_luci-app-webadmin=y
           # CONFIG_PACKAGE_luci-app-wireguard=y
           # CONFIG_PACKAGE_luci-app-wrtbwmon=y
-          # CONFIG_PACKAGE_luci-app-
+          CONFIG_PACKAGE_luci-app-vss=y
           EOF
 
           # LuCI主题:
