@@ -10,9 +10,9 @@
 name: 云编译优酷L1固件
 
 on:
-  push:
-    branches: 
-      - master
+  # push:
+    # branches: 
+      # - master
   schedule:
     - cron: 0 20 * * *
   release:
